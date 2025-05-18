@@ -1,18 +1,22 @@
 import 'package:flutter/material.dart';
-import 'homepage.dart';
+import 'login_page.dart'; // Import the login screen
 
 void main() {
-  runApp(const App());
+  runApp(const MyApp());
 }
 
-class App extends StatelessWidget {
-  const App({super.key});
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: const Home(),
       debugShowCheckedModeBanner: false,
+      title: 'BD Monitor Store',
+      theme: ThemeData(
+        primarySwatch: Colors.purple,
+      ),
+      home: const LoginPage(),
     );
   }
 }
