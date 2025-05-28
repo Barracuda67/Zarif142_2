@@ -13,10 +13,10 @@ class _HomeState extends State<Home> {
   String filter = 'All';
 
   final List<Map<String, String>> items = [
-    {'name': 'LG Monitor', 'img': 'assets/monitor1.png', 'type': 'Type 1'},
-    {'name': 'Dell Monitor', 'img': 'assets/monitor2.png', 'type': 'Type 2'},
-    {'name': 'Acer Monitor', 'img': 'assets/monitor3.png', 'type': 'Type 1'},
-    {'name': 'Frontech Monitor', 'img': 'assets/monitor4.png', 'type': 'Sale'},
+    {'name': 'Acer Laptop', 'img': 'assets/acer_laptop.png', 'type': 'New'},
+    {'name': 'Asus Laptop', 'img': 'assets/asus_laptop.png', 'type': 'Trending'},
+    {'name': 'HP Laptop', 'img': 'assets/HP_laptop.png', 'type': 'New'},
+    {'name': 'Lenovo Laptop', 'img': 'assets/lenovo_laptop.png', 'type': 'Sale'},
   ];
 
   List<Map<String, String>> get filteredItems {
@@ -30,7 +30,7 @@ class _HomeState extends State<Home> {
       appBar: AppBar(
         backgroundColor: Colors.purple,
         centerTitle: true,
-        title: const Text('BD Monitor Store'),
+        title: const Text('Leading Laptop Store'),
         actions: [
           IconButton(
             icon: Icon(showGrid ? Icons.list : Icons.grid_view),
@@ -49,7 +49,7 @@ class _HomeState extends State<Home> {
             child: Wrap(
               spacing: 8,
               children: [
-                for (var type in ['All', 'Type 1', 'Type 2', 'Sale'])
+                for (var type in ['All', 'New', 'Trending', 'Sale'])
                   ElevatedButton(
                     onPressed: () {
                       setState(() {
@@ -64,12 +64,12 @@ class _HomeState extends State<Home> {
           Expanded(
             child: showGrid
                 ? GridView.builder(
-                    padding: const EdgeInsets.all(8),
+                    padding: const EdgeInsets.all(1),
                     gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                      crossAxisCount: 2,
-                      mainAxisSpacing: 10,
-                      crossAxisSpacing: 10,
-                      childAspectRatio: 0.8,
+                      crossAxisCount: 4,
+                      mainAxisSpacing: 4,
+                      crossAxisSpacing: 4,
+                      childAspectRatio: 0.75,
                     ),
                     itemCount: filteredItems.length,
                     itemBuilder: (context, i) {

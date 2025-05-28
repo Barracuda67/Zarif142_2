@@ -52,10 +52,10 @@ dev_dependencies:
 # The following section is specific to Flutter packages.
 flutter:
   assets:
-    - assets/monitor1.png
-    - assets/monitor2.png
-    - assets/monitor3.png
-    - assets/monitor4.png
+    - assets/acer_laptop.png
+    - assets/asus_laptop.png
+    - assets/HP_laptop.png
+    - assets/lenovo_laptop.png
 
   # The following line ensures that the Material Icons font is
   # included with your application, so that you can use the icons in

@@ -13,27 +13,30 @@ class ItemCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Card(
-      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
-      child: Column(
-        mainAxisSize: MainAxisSize.min,
-        children: [
-          ClipRRect(
-            borderRadius: const BorderRadius.vertical(top: Radius.circular(12)),
-            child: Image.asset(
-              img,
-              height: 600,
-              width: double.infinity,
-              fit: BoxFit.cover,
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(6)),
+      elevation: 2,
+      margin: const EdgeInsets.all(6),
+      child: Padding(
+        padding: const EdgeInsets.all(8),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            AspectRatio(
+              aspectRatio: 0.5,
+              child: Image.asset(
+                img,
+                fit: BoxFit.contain,
+                height: 200,
+              ),
             ),
-          ),
-          Padding(
-            padding: const EdgeInsets.all(8),
-            child: Text(
+            const SizedBox(height: 8),
+            Text(
               name,
               textAlign: TextAlign.center,
+              style: const TextStyle(fontSize: 14),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }
