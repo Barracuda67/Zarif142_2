@@ -28,7 +28,7 @@ class _HomeState extends State<Home> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.purple,
+        backgroundColor: Colors.lightGreen,
         centerTitle: true,
         title: const Text('Leading Laptop Store'),
         actions: [
@@ -64,18 +64,20 @@ class _HomeState extends State<Home> {
           Expanded(
             child: showGrid
                 ? GridView.builder(
-                    padding: const EdgeInsets.all(1),
+                    padding: const EdgeInsets.all(8),
                     gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                       crossAxisCount: 4,
-                      mainAxisSpacing: 4,
-                      crossAxisSpacing: 4,
+                      mainAxisSpacing: 2,
+                      crossAxisSpacing: 2,
                       childAspectRatio: 0.75,
                     ),
                     itemCount: filteredItems.length,
                     itemBuilder: (context, i) {
-                      return ItemCard(
-                        name: filteredItems[i]['name'] ?? '',
-                        img: filteredItems[i]['img'] ?? '',
+                      return Center(
+                        child: ItemCard(
+                          name: filteredItems[i]['name'] ?? '',
+                          img: filteredItems[i]['img'] ?? '',
+                        ),
                       );
                     },
                   )
@@ -83,9 +85,11 @@ class _HomeState extends State<Home> {
                     padding: const EdgeInsets.all(8),
                     itemCount: filteredItems.length,
                     itemBuilder: (context, i) {
-                      return ItemCard(
-                        name: filteredItems[i]['name'] ?? '',
-                        img: filteredItems[i]['img'] ?? '',
+                      return Center(
+                        child: ItemCard(
+                          name: filteredItems[i]['name'] ?? '',
+                          img: filteredItems[i]['img'] ?? '',
+                        ),
                       );
                     },
                   ),

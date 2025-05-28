@@ -19,14 +19,14 @@ class ItemCard extends StatelessWidget {
       child: Padding(
         padding: const EdgeInsets.all(8),
         child: Column(
-          crossAxisAlignment: CrossAxisAlignment.center,
+          mainAxisSize: MainAxisSize.min,
           children: [
-            AspectRatio(
-              aspectRatio: 0.5,
+            SizedBox(
+              width: 280,
+              height: 280,
               child: Image.asset(
                 img,
-                fit: BoxFit.contain,
-                height: 200,
+                fit: BoxFit.cover,
               ),
             ),
             const SizedBox(height: 8),
